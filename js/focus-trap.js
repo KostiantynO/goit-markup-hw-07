@@ -41,4 +41,4 @@ modalWindow.addEventListener("keydown", function (e) {
   }
 });
 
-firstFocusableElement.focus();
+/* firstFocusableElement.focus(); */
