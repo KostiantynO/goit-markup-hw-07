@@ -1,0 +1,337 @@
+/* ------------------------------------------------------ */
+/* || --------------- START "ШАПКА САЙТА" --------------- */
+/* ------------------------------------------------------ */
+
+body > .skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: var(--zi-2);
+
+  max-width: 18.75rem; /* 300px */
+  max-height: 3.125rem; /* 50px */
+  padding: 0.5rem; /* 8px */
+  margin-left: 0.5rem;
+  overflow: hidden;
+
+  font-weight: bold;
+  font-size: 1.21rem;
+  line-height: 1.21rem;
+  color: var(--color-text-primary);
+  word-wrap: break-word;
+
+  background-color: var(--color-white);
+  border: 1px solid transparent;
+  border-radius: 3px;
+
+  transform: translateY(-100%);
+  transition: transform var(--time) var(--cubic);
+}
+
+.skip-link:focus {
+  transform: translateY(21%);
+}
+
+.page-header {
+  padding-top: 1.5rem; /* 24px */
+  padding-bottom: 1.5rem;
+
+  background-color: var(--color-white);
+  border-bottom: 1px solid #ececec; /* Line - Декор линия*/
+}
+
+.btn:focus,
+.skip-link:focus,
+.page-header .links:focus,
+.page-header .nav-link:focus {
+  outline: none;
+}
+
+.page-header > .container {
+  display: flex;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  align-items: center;
+}
+
+.header-nav {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/*
+ *
+*/
+
+/* START "Лого-ссылка WebStudio" */
+.logo {
+  display: inline-flex; /* WebStudio w145px; h31px; */
+
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 9.0625rem;
+
+  font-family: var(--logo-sans-serif);
+  font-size: 1.625rem; /* "Web" color: #2196F3; from .accent */
+  font-weight: 700; /* "Studio" color: #000000; from .black */
+  line-height: 1.193; /* 31px = box */
+
+  animation-duration: var(--time);
+  animation-timing-function: var(--cubic);
+}
+
+.logo:hover,
+.logo:focus {
+  animation-name: rotate;
+}
+
+.web-studio {
+  min-height: 26px;
+
+  transition: color var(--time) var(--cubic);
+}
+
+.logo:hover .web-studio,
+.logo:focus .web-studio {
+  color: var(--color-accent); /* Акцент #2196F3 */
+}
+
+.web-studio.white {
+  width: 3.66rem; /* 58.56px; */
+}
+
+.web-studio.black {
+  width: 5.22rem; /* 83.52px */
+}
+
+.white {
+  color: var(--color-white);
+}
+
+.black {
+  color: #000000; /* "Studio" в Лого */
+}
+/* END "Лого-ссылка WebStudio" */
+
+/*
+ *
+*/
+
+/* START "Главная навигация сайта" */
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+
+  margin-left: 5.625rem; /* 90px, левый у Нав */
+}
+
+.nav-menu .nav-menu-item + .nav-menu-item {
+  margin-left: calc(var(--uni-margin-big) - 0.375rem); /* все дети, кроме первого в html */
+}
+
+/* Студия, Портфолио, Контакты, info@devstudio.com, +38 096 111 11 11, h16px */
+.nav-link,
+.header-contact {
+  position: relative;
+
+  padding-bottom: 0.5rem;
+  padding-left: 3px;
+  padding-right: 3px;
+
+  font-weight: 500;
+  line-height: 1.14; /* 16px, color: #2196f3; Hover Focus */
+  letter-spacing: 0.02em; /* white-space: nowrap; */
+}
+
+/* Студия, Портфолио, Контакты */
+.nav-link {
+  display: inline-block;
+  padding-top: 0.5rem; /* 8px */
+
+  text-decoration: none;
+}
+
+.nav-link::before,
+.nav-link > span {
+  position: absolute;
+  inset: 0;
+
+  display: inline-block;
+  mix-blend-mode: screen;
+
+  transition: transform var(--time) var(--cubic);
+}
+
+.nav-link::before {
+  content: "";
+}
+
+.nav-link.current-link::before,
+.nav-link:focus::before,
+.nav-link:hover::before,
+.nav-link > span {
+  transform: scaleX(100%);
+}
+
+.nav-link.current-link > span,
+.nav-link::before,
+.nav-link:focus > span,
+.nav-link:hover > span {
+  transform: scaleX(0);
+}
+
+/* Result: link color = #2196f3 (accent) */
+.nav-link {
+  color: #000000;
+  background-color: var(--color-white);
+}
+
+.nav-link::before {
+  background-color: var(--color-accent);
+}
+
+/* Result: #212121 color on link */
+.nav-link > span {
+  background-color: var(--color-text-primary);
+}
+
+/*
+
+
+
+ */
+
+/* hover */
+.current-link::after,
+.nav-link[aria-current="page"]::after {
+  position: absolute;
+  top: 3.3125rem;
+  left: 0;
+
+  min-width: 100%;
+  min-height: 0.25rem;
+
+  content: "";
+
+  background-color: var(--color-accent);
+  border-radius: 0.125rem;
+  border: 1px solid transparent;
+}
+
+.header-nav > .btn {
+  max-width: 2.5rem;
+  max-height: 2.5rem;
+
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+
+  margin-left: auto;
+  margin-top: 0.625rem;
+  margin-right: 0.9375rem;
+  margin-bottom: 0.625rem;
+  border: none;
+
+  color: var(--color-text-primary);
+
+  background-color: #fff;
+}
+
+.header-nav > .btn.is-hidden {
+  position: absolute;
+  top: 0%;
+  left: 100%;
+  transform: translateY(-50%);
+}
+
+.header-nav-icon {
+  fill: currentColor;
+}
+
+.header-nav .btn--secondary:hover,
+.header-nav .btn--secondary:focus,
+.header-nav .btn--secondary:active {
+  color: var(--color-accent);
+  background-color: #fff;
+}
+
+.header-nav .btn--secondary:hover {
+  box-shadow: none;
+}
+
+/* END "Главная навигация сайта" */
+
+/*
+ *
+*/
+
+/* START "Шапка сайта - Контакты" */
+
+.header-contacts-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: auto; /* info@devstudio.com, +38 096 111 11 11 */
+}
+
+.header-contacts-list .contact-item + .contact-item {
+  margin-left: var(--uni-margin-big);
+}
+
+.header-contact {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+
+  padding-top: 0.4375rem;
+
+  color: var(--color-text-secondary);
+}
+
+.header-contact-icon {
+  margin-right: 0.625rem;
+  fill: currentColor;
+
+  transition: transform var(--time) var(--cubic);
+}
+
+.header-contact:hover > .header-contact-icon,
+.header-contact:focus > .header-contact-icon {
+  transform: rotateY(180deg);
+}
+
+.icon-envelope {
+  margin-top: 0.125rem;
+  margin-bottom: 0.125rem;
+}
+
+/* END "Шапка сайта - Контакты" */
+
+/*
+ *
+*/
+
+/* START Подсветка ссылок */
+
+.accent,
+.links:hover,
+.links:focus {
+  color: var(--color-accent); /* Акцент #2196F3 */
+}
+
+/* END Подсветка ссылок */
+/* ------------------------------------------------------ */
+/* || ---------------- END "ШАПКА САЙТА" ---------------- */
+/* ------------------------------------------------------ */

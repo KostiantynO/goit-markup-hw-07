@@ -1,0 +1,31 @@
+.page-html {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.page-html.no-scroll {
+  overflow: hidden; /* STOP MOVING AROUND! */
+}
+.studio-body {
+  overflow-y: scroll;
+}
+.studio-body.no-scroll {
+  overflow: hidden;
+}
+.portfolio-body {
+  overflow-x: hidden;
+}
+
+/* Главная */
+
+body {
+  font-family: var(--body-sans-serif);
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.71; /* h24px */
+  color: var(--color-text-primary); /* #212121 */
+  letter-spacing: 0.03em;
+
+  background-color: var(--color-white);
+  fill: var(--color-text-primary);
+
+  transition: transform var(--time) var(--cubic);
+}

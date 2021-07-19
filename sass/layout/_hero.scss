@@ -1,0 +1,81 @@
+/* ------------------------------------------------------ */
+/* || ------------------ START "ГЕРОЙ" ------------------ */
+/* ------------------------------------------------------ */
+main > .hero {
+  max-width: 100rem;
+
+  padding-top: clamp(118px, #{"max(12.5vw, 118px)"}, 200px);
+  padding-bottom: clamp(118px, #{"max(12.5vw, 118px)"}, 200px);
+
+  margin: 0 auto;
+  text-align: center;
+
+  background-color: var(--color-bg-hero); /* 2F303A */
+
+  /* Img Overlay */
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../../images/squooshed/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* anchor */
+.btn:focus .links:focus,
+.hero-btn:focus,
+.activities .links:focus,
+.team .links:focus,
+.team .social-link:focus,
+.portfolio .links:focus,
+.page-footer .links:focus,
+.page-footer .social-link:focus,
+.page-footer .btn:focus,
+.client-link:focus,
+.clients .links:focus,
+.clients .client-link:focus {
+  outline: none;
+  box-shadow: 0 0 3px 2px rgba(33, 150, 243, 0.5);
+}
+
+.hero-container {
+  padding: 0 15px;
+}
+
+/* Эффективные решения для вашего бизнеса */
+.hero-container > .hero-title {
+  position: relative;
+  min-width: clamp(250px, 100%, 696px);
+  min-height: #{"clamp(5.25rem, 1vw, 7.5rem)"};
+  margin-bottom: var(--uni-margin);
+
+  font-size: clamp(1.625rem, #{"max(3.38vw, 1.625rem)"}, 2.75rem); /* 26px, 44px */
+  line-height: clamp(2.625rem, #{"max(5.47vw, 2.625rem)"}, 3.75rem); /* 42px, 60px */
+  font-weight: 900;
+
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  word-wrap: break-word;
+  text-overflow: clip;
+}
+
+/* START Hero-Button */
+
+/* Заказать услугу h30px */
+.hero-container > .hero-btn {
+  min-width: 12.5rem;
+  max-width: 18.75rem;
+  min-height: 3.125rem;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+  line-height: 1.88; /* 30px = box */
+  letter-spacing: 0.06em; /* from btn--primary - background-color: #2196f3; */
+}
+
+/* END Hero-Button */
+
+/* ------------------------------------------------------ */
+/* || ------------------- END "ГЕРОЙ" ------------------- */
+/* ------------------------------------------------------ */

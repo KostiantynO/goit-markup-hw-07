@@ -1,0 +1,54 @@
+/* Шаблон кнопки - "Все", "Веб-сайты", "Приложения", "Дизайн", "Маркетинг", h26px */
+.btn {
+  position: relative;
+
+  display: inline-block;
+  max-width: 31.25rem; /* 500px */
+  min-height: 2.375rem; /* 38px */
+  max-height: 3.125rem; /* 50px */
+  padding-right: 1.375rem; /* 22px */
+  padding-left: 1.375rem;
+  text-overflow: ellipsis;
+
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 2.38; /* 38px = Increased LH from 26px to box */
+  letter-spacing: inherit;
+  cursor: pointer;
+
+  word-wrap: break-word;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+
+  border-radius: 0.25rem;
+  /* Inherits color: #212121; and background-color: #f5f4fa; in normal state and color: #ffffff; and background-color: #2196f3; on Hover Focus from .btn--secondary */
+
+  transition: background-color var(--time) var(--cubic);
+}
+
+/* Главная кнопка: фон - акцент,  цвет - белый #ffffff. + тень статическая */
+.btn--primary {
+  color: var(--color-white); /* Белый #FFFFFF */
+
+  min-width: 200px;
+  min-height: 50px;
+
+  background-color: var(--color-accent); /* Акцент #2196F3 */
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.15); /* Тень Кнопки-героя (статическая) */
+}
+
+/* Hero-Button (Hover) */
+.btn--primary:focus,
+.btn--primary:hover {
+  background-color: var(--color-bg-hero-btn);
+}
+
+/* Вторичная кнопка: цвет - темный #212121, фон - серый #f5f4fa, + тень динамическая по наведению */
+.btn--secondary {
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-secondary); /* Rectangle 10 */
+
+  transition: color var(--time) var(--cubic), box-shadow var(--time) var(--cubic);
+}
