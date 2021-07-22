@@ -51,12 +51,12 @@
   display: block;
 
   transition: box-shadow var(--time) var(--cubic);
-}
 
-.portfolio-project-link:focus,
-.portfolio-project-link:hover {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  &:focus,
+  &:hover {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
 }
 
 .portfolio-card > .links:hover,
@@ -71,11 +71,18 @@
   height: 100%;
 
   overflow: hidden;
+
+  &::before {
+    @extend %portfolio-card-overlay;
+
+    z-index: var(--zi-2);
+    content: "";
+    background-color: rgba(33, 150, 243, 0.9);
+  }
 }
 
 /* hover overlay */
-.project-thumb::before,
-.portfolio-project-desc {
+%portfolio-card-overlay {
   position: absolute;
   top: 100%;
 
@@ -89,10 +96,8 @@
     visibility var(--time) var(--cubic);
 }
 
-.project-thumb::before {
-  z-index: var(--zi-2);
-  content: "";
-  background-color: rgba(33, 150, 243, 0.9);
+.portfolio-project-desc {
+  @extend %portfolio-card-overlay;
 }
 
 .portfolio-project-link:hover .portfolio-project-desc,
@@ -143,11 +148,11 @@
   border-right: 1px solid var(--color-bg-project-card);
   border-bottom: 1px solid var(--color-bg-project-card);
   border-left: 1px solid var(--color-bg-project-card);
-}
 
-.project-title:hover,
-.project-title:focus {
-  overflow-y: auto;
+  &:hover,
+  &:focus {
+    overflow-y: auto;
+  }
 }
 
 /* "Технокряк, Постер New Orlean vs Golden Star, Ресторан Seafood, Проект Prime, Проект Boxes, Inspiration has no Borders, Издание Limited Edition, Проект LAB, Growing Business", h36px */
@@ -164,12 +169,12 @@
   letter-spacing: 0.06em; /* От body color: #212121; */
 
   /* white-space: nowrap; */
-}
 
-.portfolio-project-name:hover,
-.portfolio-project-name:focus,
-.portfolio-project-name:active {
-  overflow-y: auto;
+  &:hover,
+  &:focus,
+  &:active {
+    overflow-y: auto;
+  }
 }
 
 /* Тип проекта: Веб-сайт, Дизайн, Приложение, Маркетинг, h30px */
@@ -183,12 +188,12 @@
   font-size: 16px; /* from body font-weight: 400; */
   line-height: var(--line-height-project-type); /* 1.88 = 30px = box */
   color: var(--color-text-secondary); /* color: #757575; */
-}
 
-.portfolio-project-type:hover,
-.portfolio-project-type:focus,
-.portfolio-project-type:active {
-  overflow-y: auto;
+  &:hover,
+  &:focus,
+  &:active {
+    overflow-y: auto;
+  }
 }
 
 /* ------------------------------------------------------ */

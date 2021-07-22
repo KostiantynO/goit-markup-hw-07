@@ -1,16 +1,20 @@
 .page-html {
   overflow-x: hidden;
   overflow-y: auto;
+
+  &.no-scroll {
+    overflow: hidden; /* STOP MOVING AROUND! */
+  }
 }
-.page-html.no-scroll {
-  overflow: hidden; /* STOP MOVING AROUND! */
-}
+
 .studio-body {
   overflow-y: scroll;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
-.studio-body.no-scroll {
-  overflow: hidden;
-}
+
 .portfolio-body {
   overflow-x: hidden;
 }

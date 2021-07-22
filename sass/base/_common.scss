@@ -20,6 +20,7 @@ p {
   margin-block-start: 0;
   margin-block-end: 0;
 }
+
 /* END "Обнуление" */
 
 .list {
@@ -52,6 +53,46 @@ p {
   max-width: 16rem;
   max-height: 2rem;
 }
+
+/* OUTLINES */
+.svg:focus,
+.btn:focus,
+.btn--primary:focus,
+.btn--secondary:focus,
+.btn--mobile:focus,
+.skip-link:focus,
+.page-header .links:focus,
+.page-header .nav-link:focus {
+  outline: none;
+}
+
+/* anchor */
+.btn:focus .links:focus,
+.hero-btn:focus,
+.activities .links:focus,
+.team .links:focus,
+.team .social-link:focus,
+.portfolio .links:focus,
+.page-footer .links:focus,
+.page-footer .social-link:focus,
+.page-footer .btn:focus,
+.client-link:focus,
+.clients .links:focus,
+.clients .client-link:focus {
+  outline: none;
+  box-shadow: 0 0 3px 2px rgba(33, 150, 243, 0.5);
+}
+
+/* START Подсветка ссылок */
+
+.accent,
+.links:hover,
+.links:focus {
+  color: var(--color-accent);
+  /* Акцент #2196F3 */
+}
+
+/* END Подсветка ссылок */
 
 /* ------------------------------------------------------ */
 /* || -------------- END "ОБЩИЕ НАСТРОЙКИ" -------------- */

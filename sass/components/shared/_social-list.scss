@@ -28,25 +28,25 @@
   border-radius: 50%;
 
   transition: color var(--time) var(--cubic), background-color var(--time) var(--cubic);
-}
 
-.social-link:focus,
-.social-link:hover {
-  color: var(--color-white);
-  background-color: var(--color-accent);
-}
-
-.social-link:focus .social-icon,
-.social-link:hover .social-icon {
-  animation-name: rotate-box;
-  animation-duration: var(--time);
-  animation-timing-function: var(--cubic);
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
+  &:focus,
+  &:hover {
+    color: var(--color-white);
+    background-color: var(--color-accent);
+  }
 }
 
 .social-icon {
   fill: currentColor;
+
+  .social-link:focus &,
+  .social-link:hover & {
+    animation-name: rotate-box;
+    animation-duration: var(--time);
+    animation-timing-function: var(--cubic);
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+  }
 }
 /* END "Ссылки на соц. сети" */

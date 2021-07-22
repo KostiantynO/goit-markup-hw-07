@@ -5,4 +5,19 @@
   padding-left: 0.9375rem;
   margin-right: auto; /* Центрирует по ширине */
   margin-left: auto;
+
+  .page-header > & {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .page-footer > & {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+  }
 }

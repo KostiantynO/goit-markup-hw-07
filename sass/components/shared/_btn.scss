@@ -1,5 +1,5 @@
 /* Шаблон кнопки - "Все", "Веб-сайты", "Приложения", "Дизайн", "Маркетинг", h26px */
-.btn {
+%btn {
   position: relative;
 
   display: inline-block;
@@ -29,26 +29,78 @@
 }
 
 /* Главная кнопка: фон - акцент,  цвет - белый #ffffff. + тень статическая */
-.btn--primary {
-  color: var(--color-white); /* Белый #FFFFFF */
-
+%btn--primary {
+  @extend %btn;
   min-width: 200px;
   min-height: 50px;
 
-  background-color: var(--color-accent); /* Акцент #2196F3 */
-  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.15); /* Тень Кнопки-героя (статическая) */
+  color: var(--color-white);
+  background-color: var(--color-accent);
+  box-shadow: var(--shadow-hero-btn);
 }
 
-/* Hero-Button (Hover) */
-.btn--primary:focus,
-.btn--primary:hover {
+/* Главная кнопка - активна */
+%btn--primary-active {
   background-color: var(--color-bg-hero-btn);
 }
 
+.btn--primary {
+  @extend %btn--primary;
+
+  // Hero-Button (Hover)
+  &:focus,
+  &:hover {
+    @extend %btn--primary-active;
+  }
+}
+
+/* START "Фильтры-Кнопки" - Все, Веб-сайты, Приложения, Дизайн, Маркетинг */
+
 /* Вторичная кнопка: цвет - темный #212121, фон - серый #f5f4fa, + тень динамическая по наведению */
-.btn--secondary {
+%btn--secondary {
+  @extend %btn;
+
   color: var(--color-text-primary);
-  background-color: var(--color-bg-secondary); /* Rectangle 10 */
+  background-color: var(--color-bg-btn-secondary);
+  box-shadow: none;
 
   transition: color var(--time) var(--cubic), box-shadow var(--time) var(--cubic);
 }
+
+/* Вторичная кнопка по наведению: текст белый, фон - акцент, + тень (динамическая) */
+%btn--secondary-active {
+  color: var(--color-white);
+  background-color: var(--color-accent);
+  box-shadow: var(--shadow-middle);
+}
+
+.btn--secondary {
+  @extend %btn--secondary;
+
+  &:hover,
+  &:focus {
+    @extend %btn--secondary-active;
+  }
+
+  .header-nav &:hover,
+  .header-nav &:focus,
+  .header-nav &:active {
+    color: var(--color-accent);
+    background-color: #fff;
+  }
+
+  .header-nav &:hover {
+    box-shadow: none;
+  }
+}
+
+.current-btn {
+  @extend %btn--secondary-active;
+
+  &:focus,
+  &:hover {
+    @extend %btn--primary-active;
+  }
+}
+
+/* END "Фильтры-Кнопки" */

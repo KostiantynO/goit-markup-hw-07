@@ -7,14 +7,6 @@
   background-color: var(--color-bg-hero);
 }
 
-.page-footer > .container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-}
-
 /* START Футер-адрес */ /* .footer-address-wrapper { } */
 .footer-address {
   margin-top: var(--uni-margin-small);
@@ -129,19 +121,19 @@
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15));
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
-}
 
-/* E-mail */
-/* { pt=pb=15 pl=16 w47 h20 fz16 lh20 df alic lsp0.03em crgba(255, 255, 255, 0.6); } */
-.subscribe-input::placeholder {
-  display: flex;
-  align-items: center;
-  min-height: 1.25rem; /* 20px */
-  padding: 0.9375rem 0 0.9375rem 1rem;
-  font-size: 1rem; /* 16px */
-  line-height: 1.25rem; /* 20px */
-  color: rgba(255, 255, 255, 0.6);
-  letter-spacing: 0.03em;
+  /* E-mail */
+  /* { pt=pb=15 pl=16 w47 h20 fz16 lh20 df alic lsp0.03em crgba(255, 255, 255, 0.6); } */
+  &::placeholder {
+    display: flex;
+    align-items: center;
+    min-height: 1.25rem; /* 20px */
+    padding: 0.9375rem 0 0.9375rem 1rem;
+    font-size: 1rem; /* 16px */
+    line-height: 1.25rem; /* 20px */
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.03em;
+  }
 }
 
 /* Подписаться */

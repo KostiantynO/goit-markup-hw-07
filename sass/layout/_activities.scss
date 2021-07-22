@@ -52,12 +52,12 @@ main > .activities {
   word-wrap: break-word;
 
   background-color: rgba(47, 48, 58, 0.8);
-}
 
-.activity-overlay:hover,
-.activity-overlay:focus,
-.activity-overlay:active {
-  overflow-y: auto;
+  &:hover,
+  &:focus,
+  &:active {
+    overflow-y: auto;
+  }
 }
 
 /* Десктопные приложения, Мобильные приложения, Дизайнерские решения, h16px */

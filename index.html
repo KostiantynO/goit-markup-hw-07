@@ -44,13 +44,14 @@
       <div class="container">
         <nav class="header-nav">
           <a class="logo links" href="./" hreflang="ru" lang="en">
-            <span class="web-studio accent">Web</span><span class="web-studio black">Studio</span>
+            <span class="logo__web-studio accent">Web</span
+            ><span class="logo__web-studio black">Studio</span>
           </a>
 
           <ul class="nav-menu list">
-            <li class="nav-menu-item">
+            <li class="nav-menu__item">
               <a
-                class="nav-link current-link"
+                class="nav-link nav-link_current"
                 data-content="Студия"
                 href="./"
                 aria-current="page"
@@ -59,13 +60,13 @@
               </a>
             </li>
 
-            <li class="nav-menu-item">
+            <li class="nav-menu__item">
               <a class="nav-link" data-content="Портфолио" href="./portfolio.html" hreflang="ru"
                 >Портфолио<span class="nav-link-span"></span
               ></a>
             </li>
 
-            <li class="nav-menu-item">
+            <li class="nav-menu__item">
               <a
                 class="nav-link"
                 data-content="Контакты"
@@ -78,7 +79,7 @@
 
           <button
             type="button"
-            class="btn btn--secondary is-hidden"
+            class="btn btn--secondary btn--mobile is-hidden"
             aria-labelledby="burger-id-label"
           >
             <svg class="header-nav-icon svg icon-burger" aria-hidden="true" width="40" height="40">
@@ -90,7 +91,7 @@
 
           <button
             type="button"
-            class="btn btn--secondary is-hidden"
+            class="btn btn--secondary btn--mobile is-hidden"
             aria-labelledby="close-nav-menu-id-label"
           >
             <svg class="header-nav-icon svg icon-close" aria-hidden="true" width="40" height="40">
@@ -943,11 +944,11 @@
 
     <!-- Backdrop (Overlay) -->
     <div
-      tabindex="-1"
       class="backdrop is-hidden"
-      role="dialog"
       data-modal
+      role="dialog"
       aria-labelledby="form-title-id"
+      tabindex="-1"
     >
       <!-- Модальное окно -->
       <div class="modal" id="modal-id" role="document" aria-label="Modal window" aria-modal="true">
@@ -996,7 +997,7 @@
               <label class="form-label" for="user-name-id" aria-label="Ваше имя">Имя</label>
 
               <div class="svg-wrapper">
-                <svg tabindex="-1" class="form-svg" aria-hidden="true" width="18" height="18">
+                <svg class="form-svg" aria-hidden="true" tabindex="-1" width="18" height="18">
                   <use href="./images/icomoon-svgomg/icons.svg#icon-person"></use>
                 </svg>
               </div>
@@ -1018,7 +1019,7 @@
               <label class="form-label" for="user-tel-id" aria-label="Ваш телефон"> Телефон </label>
 
               <div class="svg-wrapper">
-                <svg tabindex="-1" class="form-svg" aria-hidden="true" width="18" height="18">
+                <svg class="form-svg" aria-hidden="true" tabindex="-1" width="18" height="18">
                   <use href="./images/icomoon-svgomg/icons.svg#icon-phone"></use>
                 </svg>
               </div>
@@ -1039,7 +1040,7 @@
               <label class="form-label" for="user-email-id" aria-label="Ваша почта">Почта</label>
 
               <div class="svg-wrapper">
-                <svg tabindex="-1" class="form-svg" aria-hidden="true" width="18" height="18">
+                <svg class="form-svg" aria-hidden="true" tabindex="-1" width="18" height="18">
                   <use href="./images/icomoon-svgomg/icons.svg#icon-email"></use>
                 </svg>
               </div>
@@ -1076,9 +1077,9 @@
                 title="Пожалуйста, установите этот флажок, если Вы хотите продолжить."
               >
                 <svg
-                  tabindex="-1"
                   class="form-svg check-icon"
                   aria-hidden="true"
+                  tabindex="-1"
                   width=" 11.4"
                   height="8.4"
                 >
@@ -1107,3 +1108,15 @@
     <script src="./js/focus-trap.js"></script>
   </body>
 </html>
+
+<!--
+.page-header
+.container
+.header-nav
+
+.logo
+.nav-menu__item
+.modal-btn
+.menu__item
+.item-link
+-->
