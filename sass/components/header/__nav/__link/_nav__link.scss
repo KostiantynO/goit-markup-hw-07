@@ -23,12 +23,12 @@
 
   &:focus::before,
   &:hover::before,
-  &_current::before {
+  &--current::before {
     @extend %scaleX-full-width;
   }
 
   /* Current-link highlight */
-  &_current::after {
+  &--current::after {
     position: absolute;
     top: 3.3125rem;
     left: 0;

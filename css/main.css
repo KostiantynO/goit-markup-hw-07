@@ -219,7 +219,7 @@ p {
 .nav__btn--mobile:focus,
 .skip-link:focus,
 .page-header .links:focus,
-.page-header .nav-link:focus {
+.page-header .nav__link:focus {
   outline: none;
 }
 
@@ -533,7 +533,7 @@ body > .skip-link:focus {
   background-color: var(--color-accent);
 }
 
-.nav__link_current::after {
+.nav__link--current::after {
   position: absolute;
   top: 3.3125rem;
   left: 0;
@@ -1823,7 +1823,7 @@ main > .activities {
 }
 
 /* Show overlay over active nav-link */
-.nav__link:focus::before, .nav__link:hover::before, .nav__link_current::before, .nav__link-overlay {
+.nav__link:focus::before, .nav__link:hover::before, .nav__link--current::before, .nav__link-overlay {
   transform: scaleX(100%);
 }
 
