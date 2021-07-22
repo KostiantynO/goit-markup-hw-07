@@ -63,14 +63,14 @@
     @extend %btn--secondary-active;
   }
 
-  .header__nav &:hover,
-  .header__nav &:focus,
-  .header__nav &:active {
+  .page-header__nav &:hover,
+  .page-header__nav &:focus,
+  .page-header__nav &:active {
     color: var(--color-accent);
     background-color: #fff;
   }
 
-  .header__nav &:hover {
+  .page-header__nav &:hover {
     box-shadow: none;
   }
 }

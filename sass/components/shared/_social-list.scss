@@ -8,12 +8,12 @@
   margin-left: -0.625rem;
 }
 
-.social-item {
+.social-list__item {
   margin-top: 1rem;
   margin-left: 0.625rem;
 }
 
-.social-link {
+.social-list__link {
   position: relative;
 
   display: flex;
@@ -36,11 +36,11 @@
   }
 }
 
-.social-icon {
+.social-list__icon {
   fill: currentColor;
 
-  .social-link:focus &,
-  .social-link:hover & {
+  .social-list__link:focus &,
+  .social-list__link:hover & {
     animation-name: rotate-box;
     animation-duration: var(--time);
     animation-timing-function: var(--cubic);

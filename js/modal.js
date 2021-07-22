@@ -18,13 +18,15 @@
       refs.htmlAndBody[1].classList.toggle("no-scroll");
   }
 
+  var isFocused = 0;
+
   refs.openModalBtn.addEventListener("click", function () {
     refs.modal.classList.contains("is-hidden") &&
       (toggleModal(),
       /* Чарівництво */
       setTimeout(() => {
         refs.modal.focus();
-        var isFocused = document.activeElement === refs.modal;
+        isFocused = document.activeElement === refs.modal;
         console.log(`modal isFocused: ${isFocused}`);
       }, 250));
   }),
@@ -32,6 +34,8 @@
       toggleModal(),
         setTimeout(() => {
           refs.openModalBtn.focus();
+          isFocused = document.activeElement === refs.openModalBtn;
+          console.log(`openModalBtn isFocused: ${isFocused}`);
         }, 250);
     }),
     refs.modal.addEventListener("keyup", event => {
@@ -40,6 +44,8 @@
         (toggleModal(),
         setTimeout(() => {
           refs.openModalBtn.focus();
+          isFocused = document.activeElement === refs.openModalBtn;
+          console.log(`openModalBtn isFocused: ${isFocused}`);
         }, 250));
     }),
     refs.modal.addEventListener("click", event => {
@@ -47,6 +53,8 @@
         (toggleModal(),
         setTimeout(() => {
           refs.openModalBtn.focus();
+          isFocused = document.activeElement === refs.openModalBtn;
+          console.log(`openModalBtn isFocused: ${isFocused}`);
         }, 250));
     });
 })();

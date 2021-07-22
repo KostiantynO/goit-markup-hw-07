@@ -1,5 +1,5 @@
 /* START "Главная навигация сайта" */
-.header__nav {
+.page-header__nav {
   position: relative;
 
   display: flex;
@@ -50,7 +50,7 @@
   transform: translateY(-50%);
 }
 
-.header__nav-icon {
+.nav__icon {
   fill: currentColor;
 }
 

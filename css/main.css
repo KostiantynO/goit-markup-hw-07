@@ -228,10 +228,10 @@ p {
 .hero-btn:focus,
 .activities .links:focus,
 .team .links:focus,
-.team .social-link:focus,
+.team .social-list__link:focus,
 .portfolio .links:focus,
 .page-footer .links:focus,
-.page-footer .social-link:focus,
+.page-footer .social-list__link:focus,
 .page-footer .btn:focus,
 .client-link:focus,
 .clients .links:focus,
@@ -254,7 +254,7 @@ p {
 /* ------------------------------------------------------ */
 .page-html {
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .page-html.no-scroll {
@@ -263,11 +263,11 @@ p {
 }
 
 .studio-body {
-  overflow-y: scroll;
+  overflow: hidden;
 }
 
 .studio-body.no-scroll {
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .portfolio-body {
@@ -275,7 +275,8 @@ p {
 }
 
 /* Главная */
-body {
+.studio-body,
+.portfolio-body {
   font-family: var(--body-sans-serif);
   font-size: 0.875rem;
   /* 14px */
@@ -301,14 +302,14 @@ body {
   margin-left: auto;
 }
 
-.page-header > .container {
+.page-header__container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
 }
 
-.page-footer > .container {
+.page-footer__container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -411,7 +412,7 @@ body > .skip-link:focus {
 }
 
 /* START "Главная навигация сайта" */
-.header__nav {
+.page-header__nav {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -456,7 +457,7 @@ body > .skip-link:focus {
   transform: translateY(-50%);
 }
 
-.header__nav-icon {
+.nav__icon {
   fill: currentColor;
 }
 
@@ -600,14 +601,14 @@ body > .skip-link:focus {
   transition: color var(--time) var(--cubic), box-shadow var(--time) var(--cubic);
 }
 
-.header__nav .btn--secondary:hover,
-.header__nav .btn--secondary:focus,
-.header__nav .btn--secondary:active {
+.page-header__nav .btn--secondary:hover,
+.page-header__nav .btn--secondary:focus,
+.page-header__nav .btn--secondary:active {
   color: var(--color-accent);
   background-color: #fff;
 }
 
-.header__nav .btn--secondary:hover {
+.page-header__nav .btn--secondary:hover {
   box-shadow: none;
 }
 
@@ -659,12 +660,12 @@ body > .skip-link:focus {
   margin-left: -0.625rem;
 }
 
-.social-item {
+.social-list__item {
   margin-top: 1rem;
   margin-left: 0.625rem;
 }
 
-.social-link {
+.social-list__link {
   position: relative;
   display: flex;
   align-items: center;
@@ -676,17 +677,17 @@ body > .skip-link:focus {
   transition: color var(--time) var(--cubic), background-color var(--time) var(--cubic);
 }
 
-.social-link:focus, .social-link:hover {
+.social-list__link:focus, .social-list__link:hover {
   color: var(--color-white);
   background-color: var(--color-accent);
 }
 
-.social-icon {
+.social-list__icon {
   fill: currentColor;
 }
 
-.social-link:focus .social-icon,
-.social-link:hover .social-icon {
+.social-list__link:focus .social-list__icon,
+.social-list__link:hover .social-list__icon {
   animation-name: rotate-box;
   animation-duration: var(--time);
   animation-timing-function: var(--cubic);
@@ -703,10 +704,14 @@ body > .skip-link:focus {
   z-index: var(--zi-7);
   padding: 0 15px;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   background-color: rgba(0, 0, 0, 0.2);
   transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic), visibility var(--time) var(--cubic), background-color var(--time) var(--cubic);
   /* Fading is smooth after deleting excessive is-hidden parts. */
+}
+
+.backdrop.is-hidden {
+  overflow: hidden;
 }
 
 /* ------------------------------------------------------ */
@@ -1659,11 +1664,11 @@ main > .activities {
   text-transform: uppercase;
 }
 
-.footer-social-link {
+.footer-social-list__link {
   background: rgba(255, 255, 255, 0.1);
 }
 
-.footer-social-icon {
+.footer-social-list__icon {
   fill: var(--color-white);
 }
 
