@@ -1,7 +1,7 @@
 /* ------------------------------------------------------ */
 /* || ------------------ START "ГЕРОЙ" ------------------ */
 /* ------------------------------------------------------ */
-main > .hero {
+.main__hero {
   max-width: 100rem;
 
   padding-top: clamp(118px, #{"max(12.5vw, 118px)"}, 200px);
@@ -20,12 +20,8 @@ main > .hero {
   background-size: cover;
 }
 
-.hero-container {
-  padding: 0 15px;
-}
-
 /* Эффективные решения для вашего бизнеса */
-.hero-container > .hero-title {
+.hero__title {
   position: relative;
   min-width: clamp(250px, 100%, 696px);
   min-height: #{"clamp(5.25rem, 1vw, 7.5rem)"};
@@ -45,7 +41,7 @@ main > .hero {
 /* START Hero-Button */
 
 /* Заказать услугу h30px */
-.hero-container > .hero-btn {
+.hero__btn {
   min-width: 12.5rem;
   max-width: 18.75rem;
   min-height: 3.125rem;

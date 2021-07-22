@@ -42,47 +42,47 @@
     <!-- Шапка сайта 2021-07-17 11:46 -->
     <header class="page-header">
       <div class="container">
-        <nav class="header-nav">
+        <nav class="header__nav">
           <a class="logo links" href="./" hreflang="ru" lang="en">
             <span class="logo__web-studio accent">Web</span
             ><span class="logo__web-studio black">Studio</span>
           </a>
 
-          <ul class="nav-menu list">
-            <li class="nav-menu__item">
+          <ul class="nav__menu list">
+            <li class="nav__item">
               <a
-                class="nav-link nav-link_current"
+                class="nav__link nav__link_current"
                 data-content="Студия"
                 href="./"
                 aria-current="page"
                 hreflang="ru"
-                >Студия<span class="nav-link-span"></span>
+                >Студия<span class="nav__link-overlay"></span>
               </a>
             </li>
 
-            <li class="nav-menu__item">
-              <a class="nav-link" data-content="Портфолио" href="./portfolio.html" hreflang="ru"
-                >Портфолио<span class="nav-link-span"></span
+            <li class="nav__item">
+              <a class="nav__link" data-content="Портфолио" href="./portfolio.html" hreflang="ru"
+                >Портфолио<span class="nav__link-overlay"></span
               ></a>
             </li>
 
-            <li class="nav-menu__item">
+            <li class="nav__item">
               <a
-                class="nav-link"
+                class="nav__link"
                 data-content="Контакты"
                 rel="noopener nofollow noreferrer"
                 href="#0"
-                >Контакты<span class="nav-link-span"></span
+                >Контакты<span class="nav__link-overlay"></span
               ></a>
             </li>
           </ul>
 
           <button
             type="button"
-            class="btn btn--secondary btn--mobile is-hidden"
+            class="btn btn--secondary nav__btn--mobile is-hidden"
             aria-labelledby="burger-id-label"
           >
-            <svg class="header-nav-icon svg icon-burger" aria-hidden="true" width="40" height="40">
+            <svg class="header__nav-icon svg icon-burger" aria-hidden="true" width="40" height="40">
               <use href="./images/icomoon-svgomg/icons.svg#icon-burger"></use>
             </svg>
 
@@ -91,14 +91,14 @@
 
           <button
             type="button"
-            class="btn btn--secondary btn--mobile is-hidden"
-            aria-labelledby="close-nav-menu-id-label"
+            class="btn btn--secondary nav__btn--mobile is-hidden"
+            aria-labelledby="close-nav__menu-id-label"
           >
-            <svg class="header-nav-icon svg icon-close" aria-hidden="true" width="40" height="40">
+            <svg class="header__nav-icon svg icon-close" aria-hidden="true" width="40" height="40">
               <use href="./images/icomoon-svgomg/icons.svg#icon-close-40px"></use>
             </svg>
 
-            <span class="tooltip sr-only" id="close-nav-menu-id-label" tabindex="-1">
+            <span class="tooltip sr-only" id="close-nav__menu-id-label" tabindex="-1">
               Закрыть
             </span>
           </button>
@@ -156,14 +156,14 @@
 
     <main>
       <!-- Герой -->
-      <section class="hero section" aria-labelledby="hero-title-id">
-        <div class="hero-container container" id="main-content">
-          <h1 class="hero-title" id="hero-title-id">
+      <section class="section hero main__hero" aria-labelledby="hero__title_id">
+        <div class="container" id="main-content">
+          <h1 class="hero__title" id="hero__title_id">
             Эффективные решения <br />
             для вашего бизнеса
           </h1>
 
-          <button type="button" class="hero-btn btn btn--primary" data-modal-open>
+          <button type="button" class="btn btn--primary hero__btn" data-modal-open>
             Заказать услугу
           </button>
         </div>
@@ -1112,10 +1112,10 @@
 <!--
 .page-header
 .container
-.header-nav
+.header__nav
 
 .logo
-.nav-menu__item
+.nav__item
 .modal-btn
 .menu__item
 .item-link

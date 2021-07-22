@@ -42,46 +42,47 @@
     <!-- Шапка сайта 2021-07-17 11:46 -->
     <header class="page-header">
       <div class="container">
-        <nav class="header-nav">
+        <nav class="header__nav">
           <a class="logo links" href="./" hreflang="ru" lang="en">
-            <span class="web-studio accent">Web</span><span class="web-studio black">Studio</span>
+            <span class="logo__web-studio accent">Web</span
+            ><span class="logo__web-studio black">Studio</span>
           </a>
 
-          <ul class="nav-menu list">
-            <li class="nav-menu__item">
-              <a class="nav-link" data-content="Студия" href="./" hreflang="ru"
-                >Студия<span class="nav-link-span"></span>
+          <ul class="nav__menu list">
+            <li class="nav__item">
+              <a class="nav__link" data-content="Студия" href="./" hreflang="ru"
+                >Студия<span class="nav__link-overlay"></span>
               </a>
             </li>
 
-            <li class="nav-menu__item">
+            <li class="nav__item">
               <a
-                class="nav-link nav-link_current"
+                class="nav__link nav__link_current"
                 data-content="Портфолио"
                 href="./portfolio.html"
                 aria-current="page"
                 hreflang="ru"
-                >Портфолио<span class="nav-link-span"></span
+                >Портфолио<span class="nav__link-overlay"></span
               ></a>
             </li>
 
-            <li class="nav-menu__item">
+            <li class="nav__item">
               <a
-                class="nav-link"
+                class="nav__link"
                 data-content="Контакты"
                 rel="noopener nofollow noreferrer"
                 href="#0"
-                >Контакты<span class="nav-link-span"></span
+                >Контакты<span class="nav__link-overlay"></span
               ></a>
             </li>
           </ul>
 
           <button
             type="button"
-            class="btn btn--secondary btn--mobile is-hidden"
+            class="btn btn--secondary nav__btn--mobile is-hidden"
             aria-labelledby="burger-id-label"
           >
-            <svg class="header-nav-icon svg icon-burger" aria-hidden="true" width="40" height="40">
+            <svg class="header__nav-icon svg icon-burger" aria-hidden="true" width="40" height="40">
               <use href="./images/icomoon-svgomg/icons.svg#icon-burger"></use>
             </svg>
 
@@ -90,14 +91,14 @@
 
           <button
             type="button"
-            class="btn btn--secondary btn--mobile is-hidden"
-            aria-labelledby="close-nav-menu-id-label"
+            class="btn btn--secondary nav__btn--mobile is-hidden"
+            aria-labelledby="close-nav__menu-id-label"
           >
-            <svg class="header-nav-icon svg icon-close" aria-hidden="true" width="40" height="40">
+            <svg class="header__nav-icon svg icon-close" aria-hidden="true" width="40" height="40">
               <use href="./images/icomoon-svgomg/icons.svg#icon-close-40px"></use>
             </svg>
 
-            <span class="tooltip sr-only" id="close-nav-menu-id-label" tabindex="-1">
+            <span class="tooltip sr-only" id="close-nav__menu-id-label" tabindex="-1">
               Закрыть
             </span>
           </button>

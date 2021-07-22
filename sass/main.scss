@@ -12,31 +12,37 @@
 @import "./base/section";
 
 /* COMPONENTS */
+// Studio and Portfolio
 @import "./components/animations";
-
-@import "./components/header/skip-link";
-@import "./components/header/header-nav";
+@import "./components/skip-link";
+@import "./components/header/__nav/header__nav";
 @import "./components/shared/logo";
-@import "./components/header/nav-link";
+@import "./components/header/__nav/__link/nav__link";
 @import "./components/shared/btn";
-
 @import "./components/header/header-contacts-list";
 @import "./components/shared/social-list";
 
+// Studio - Modal
 @import "./components/modal/backdrop";
 @import "./components/modal/modal";
 @import "./components/modal/form";
 
+// Portfolio - Filters
+@import "./components/portfolio/portfolio-filters";
+
 /* LAYOUT */
 @import "./layout/page-header";
 
+// Studio
 @import "./layout/hero";
 @import "./layout/features";
 @import "./layout/activities";
 @import "./layout/team";
 @import "./layout/clients";
 
-@import "./layout/portfolio-filters";
+// Portfolio
 @import "./layout/portfolio";
 
 @import "./layout/page-footer";
+
+@import "./utils/placeholders";
