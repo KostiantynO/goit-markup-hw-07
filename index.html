@@ -79,7 +79,7 @@
 
           <button
             type="button"
-            class="btn btn--secondary nav__btn--mobile is-hidden"
+            class="btn btn--secondary nav__btn-mobile is-hidden"
             aria-labelledby="burger-id-label"
           >
             <!-- 40x40 -->
@@ -97,7 +97,7 @@
 
           <button
             type="button"
-            class="btn btn--secondary nav__btn--mobile is-hidden"
+            class="btn btn--secondary nav__btn-mobile is-hidden"
             aria-labelledby="close-nav__menu-id-label"
           >
             <!-- 40x40 -->
@@ -173,7 +173,7 @@
           </h1>
 
           <button type="button" class="btn btn--primary hero__btn" data-modal-open>
-            Заказать услугу
+            <span class="btn__label">Заказать услугу</span>
           </button>
         </div>
       </section>
@@ -1109,7 +1109,7 @@
 
               <!-- Отправляем форму подписки -->
               <button type="submit" class="subscribe-btn btn btn--primary" id="subscribe-btn-id">
-                Подписаться
+                <span class="btn__label">Подписаться</span>
 
                 <!-- 24x24 -->
                 <svg class="send-icon svg" aria-hidden="true" width="1.5rem" height="1.5rem">
@@ -1169,10 +1169,11 @@
                 name="user-name"
                 class="form-input"
                 id="user-name-id"
-                title="Ваше имя, до 50 глифов"
+                title="Ваше имя, до 50-и символов"
                 placeholder=" "
                 required
                 maxlength="50"
+                data-placeholder="Иван Иванович"
               />
 
               <label class="form-label" for="user-name-id" aria-label="Ваше имя">Имя</label>
@@ -1202,6 +1203,7 @@
                 required
                 pattern="[0-9]{10}"
                 maxlength="10"
+                data-placeholder="0123456789"
               />
 
               <label class="form-label" for="user-tel-id" aria-label="Ваш телефон"> Телефон </label>
@@ -1226,9 +1228,10 @@
                 name="user-email"
                 class="form-input"
                 id="user-email-id"
-                title="z@x, до 64 глифов"
+                title="your@email.com, до 64-х символов"
                 maxlength="64"
                 placeholder=" "
+                data-placeholder="your@email.com"
                 required
               />
 
@@ -1297,7 +1300,9 @@
 
           <!-- Отправляем форму (Btn) -->
           <div class="group submit-btn-wrapper">
-            <button type="submit" class="form-submit-btn btn btn--primary">Отправить</button>
+            <button type="submit" class="form-submit-btn btn btn--primary">
+              <span class="btn__label">Отправить</span>
+            </button>
           </div>
         </form>
       </div>

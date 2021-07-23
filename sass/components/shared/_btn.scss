@@ -2,15 +2,11 @@
 .btn {
   position: relative;
 
-  display: inline-block;
   max-width: 31.25rem; /* 500px */
   min-height: 2.25rem; /* 36px */
   max-height: 3.125rem; /* 50px */
 
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
-  padding-right: 1.3125rem; /* 21px */
-  padding-left: 1.3125rem;
+  padding: 0.3125rem 1.3125rem; /* pt=pb=5px */ /* pr=pl=21px */
   text-overflow: ellipsis;
 
   font-size: 1rem;
@@ -20,11 +16,9 @@
   word-wrap: break-word;
 
   cursor: pointer;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
+  border: 1px solid transparent;
 
-  border-radius: 0.25rem;
+  border-radius: 4px;
   /* Inherits color: #212121; and background-color: #f5f4fa; in normal state and color: #ffffff; and background-color: #2196f3; on Hover Focus from .btn--secondary */
 
   transition: background-color var(--time) var(--cubic);
@@ -32,12 +26,19 @@
 
 /* Главная кнопка: фон - акцент,  цвет - белый #ffffff. + тень статическая */
 .btn--primary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
   min-width: 12.5rem; /* 200px */
+  max-width: 18.75rem;
   min-height: 3.125rem; /* 50px */
 
+  font-weight: 700;
+  line-height: 1.875; /* identical to box height, or 187% */
+  color: var(--color-white);
   letter-spacing: 0.06em;
 
-  color: var(--color-white);
   background-color: var(--color-accent);
   box-shadow: var(--shadow-hero-btn);
 
@@ -61,17 +62,6 @@
   &:hover,
   &:focus {
     @extend %btn--secondary-active;
-  }
-
-  .page-header__nav &:hover,
-  .page-header__nav &:focus,
-  .page-header__nav &:active {
-    color: var(--color-accent);
-    background-color: #fff;
-  }
-
-  .page-header__nav &:hover {
-    box-shadow: none;
   }
 }
 

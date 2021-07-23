@@ -84,7 +84,7 @@ p
 .btn:focus,
 .btn--primary:focus,
 .btn--secondary:focus,
-.nav__btn--mobile:focus,
+.nav__btn-mobile:focus,
 .skip-link:focus,
 .page-header .links:focus,
 .page-header .nav__link:focus
@@ -123,8 +123,8 @@ body > .skip-link:focus
 .page-header__nav
 .nav__menu
 .nav__item:not(:first-child)
-.nav__btn--mobile
-.nav__btn--mobile.is-hidden
+.nav__btn-mobile
+.nav__btn-mobile.is-hidden
 .nav__icon
 .logo
 .logo:hover,

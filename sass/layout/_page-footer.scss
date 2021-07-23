@@ -141,10 +141,10 @@
   display: inline-flex;
   align-items: center;
 
-  padding-top: 10px;
-  padding-right: 28px;
-  padding-bottom: 10px;
-  padding-left: 29px;
+  padding-top: 0.5625rem; /* 9px */
+  padding-right: 1.6875rem; /* 27px */
+  padding-bottom: 0.5625rem; /* 9px */
+  padding-left: 1.75rem; /* 28px */
   /* margin-top: var(--uni-margin-med); for mobile */
 
   font-size: 1rem;
@@ -154,7 +154,7 @@
 }
 
 .subscribe-btn .send-icon {
-  margin-left: 10px;
+  margin-left: 0.625rem;
   fill: currentColor;
   /* anchor */
   animation: send-icon-return var(--time) var(--cubic) 1 backwards;
@@ -167,26 +167,6 @@
 .subscribe-btn:hover > .send-icon,
 .subscribe-btn:focus > .send-icon {
   animation: send-icon-fly var(--time) var(--cubic) 1 forwards;
-}
-
-@keyframes send-icon-fly {
-  0% {
-    transform: rotate(0deg) scale(1);
-  }
-
-  100% {
-    transform: rotate(-360deg) scale(0.5);
-  }
-}
-
-@keyframes send-icon-return {
-  0% {
-    transform: rotate(360deg) scale(0.5);
-  }
-
-  100% {
-    transform: rotate(0deg) scale(1);
-  }
 }
 
 /* END Форма подписки на рассылку */

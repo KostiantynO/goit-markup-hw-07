@@ -1,5 +1,7 @@
 @charset "UTF-8";
-/* UTILS */
+/* ------------------------------------------------------ */
+/* || ------------------ START "UTILS" ------------------ */
+/* ------------------------------------------------------ */
 /* ------------------------------------------------------ */
 /* || --------------- START "ПЕРЕМЕННЫЕ" ---------------- */
 /* ------------------------------------------------------ */
@@ -160,7 +162,12 @@ body .sr-only {
 /* ------------------------------------------------------ */
 /* || --------------- END "SITE TESTING" ---------------- */
 /* ------------------------------------------------------ */
-/* BASE */
+/* ------------------------------------------------------ */
+/* || ------------------- END "UTILS" ------------------- */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* || ------------------ START "BASE" ------------------- */
+/* ------------------------------------------------------ */
 /* ------------------------------------------------------ */
 /* || ------------- START "ОБЩИЕ НАСТРОЙКИ" ------------- */
 /* ------------------------------------------------------ */
@@ -212,34 +219,7 @@ p {
 }
 
 /* OUTLINES */
-.svg:focus,
-.btn:focus,
-.btn--primary:focus,
-.btn--secondary:focus,
-.nav__btn--mobile:focus,
-.skip-link:focus,
-.page-header .links:focus,
-.page-header .nav__link:focus {
-  outline: none;
-}
-
 /* anchor */
-.btn:focus .links:focus,
-.hero-btn:focus,
-.activities .links:focus,
-.team .links:focus,
-.team .social-list__link:focus,
-.portfolio .links:focus,
-.page-footer .links:focus,
-.page-footer .social-list__link:focus,
-.page-footer .btn:focus,
-.client-link:focus,
-.clients .links:focus,
-.clients .client-link:focus {
-  outline: none;
-  box-shadow: 0 0 3px 2px rgba(33, 150, 243, 0.5);
-}
-
 /* START Подсветка ссылок */
 .accent,
 .links:hover,
@@ -304,14 +284,12 @@ p {
 
 .page-header__container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
 }
 
 .page-footer__container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
@@ -338,7 +316,12 @@ p {
   /* from body color: #212121; from h2 = font-weight: 700; */
 }
 
-/* COMPONENTS */
+/* ------------------------------------------------------ */
+/* || ------------------- END "BASE" -------------------- */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* || --------------- START "COMPONENTS" ---------------- */
+/* ------------------------------------------------------ */
 /* START Анимация */
 /* opacity, translate, rotate, scale, transform: perspective(400px) rotateY(45deg); */
 /* keep */
@@ -378,6 +361,24 @@ p {
   }
   100% {
     transform: scaleX(100%);
+  }
+}
+
+@keyframes send-icon-fly {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(-360deg) scale(0.5);
+  }
+}
+
+@keyframes send-icon-return {
+  0% {
+    transform: rotate(360deg) scale(0.5);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
   }
 }
 
@@ -432,33 +433,6 @@ body > .skip-link:focus {
 .nav__item:not(:first-child) {
   margin-left: calc(var(--uni-margin-big) - 0.375rem);
   /* все потомки, кроме первого */
-}
-
-.nav__btn--mobile {
-  max-width: 2.5rem;
-  max-height: 2.5rem;
-  padding-top: 0;
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  margin-left: auto;
-  margin-top: 0.625rem;
-  margin-right: 0.9375rem;
-  margin-bottom: 0.625rem;
-  border: none;
-  color: var(--color-text-primary);
-  background-color: #fff;
-}
-
-.nav__btn--mobile.is-hidden {
-  position: absolute;
-  top: 0%;
-  left: 100%;
-  transform: translateY(-50%);
-}
-
-.nav__icon {
-  fill: currentColor;
 }
 
 /* END "Главная навигация сайта" */
@@ -552,18 +526,15 @@ body > .skip-link:focus {
 /* Шаблон кнопки - "Все", "Веб-сайты", "Приложения", "Дизайн", "Маркетинг", h26px */
 .btn {
   position: relative;
-  display: inline-block;
   max-width: 31.25rem;
   /* 500px */
   min-height: 2.25rem;
   /* 36px */
   max-height: 3.125rem;
   /* 50px */
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
-  padding-right: 1.3125rem;
-  /* 21px */
-  padding-left: 1.3125rem;
+  padding: 0.3125rem 1.3125rem;
+  /* pt=pb=5px */
+  /* pr=pl=21px */
   text-overflow: ellipsis;
   font-size: 1rem;
   font-weight: 500;
@@ -572,22 +543,27 @@ body > .skip-link:focus {
   letter-spacing: 0.03em;
   word-wrap: break-word;
   cursor: pointer;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
-  border-radius: 0.25rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
   /* Inherits color: #212121; and background-color: #f5f4fa; in normal state and color: #ffffff; and background-color: #2196f3; on Hover Focus from .btn--secondary */
   transition: background-color var(--time) var(--cubic);
 }
 
 /* Главная кнопка: фон - акцент,  цвет - белый #ffffff. + тень статическая */
 .btn--primary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   min-width: 12.5rem;
   /* 200px */
+  max-width: 18.75rem;
   min-height: 3.125rem;
   /* 50px */
-  letter-spacing: 0.06em;
+  font-weight: 700;
+  line-height: 1.875;
+  /* identical to box height, or 187% */
   color: var(--color-white);
+  letter-spacing: 0.06em;
   background-color: var(--color-accent);
   box-shadow: var(--shadow-hero-btn);
 }
@@ -601,18 +577,37 @@ body > .skip-link:focus {
   transition: color var(--time) var(--cubic), box-shadow var(--time) var(--cubic);
 }
 
-.page-header__nav .btn--secondary:hover,
-.page-header__nav .btn--secondary:focus,
-.page-header__nav .btn--secondary:active {
+/* END "Фильтры-Кнопки" */
+/* START Mobile button */
+.nav__btn-mobile {
+  position: absolute;
+  top: 0%;
+  left: 100%;
+  max-width: 2.5rem;
+  max-height: 2.5rem;
+  padding: 0;
+  margin: 0.625rem 0.9375rem;
+  margin-left: auto;
+  color: var(--color-text-primary);
+  background-color: #fff;
+  border: none;
+  transform: translateY(-50%);
+}
+
+.nav__btn-mobile:hover, .nav__btn-mobile:focus, .nav__btn-mobile:active {
   color: var(--color-accent);
   background-color: #fff;
 }
 
-.page-header__nav .btn--secondary:hover {
+.nav__btn-mobile:hover {
   box-shadow: none;
 }
 
-/* END "Фильтры-Кнопки" */
+.nav__icon {
+  fill: currentColor;
+}
+
+/* END Mobile button */
 /* START "Шапка сайта - Контакты" */
 .page-header__contacts-list {
   display: flex;
@@ -697,6 +692,29 @@ body > .skip-link:focus {
 }
 
 /* END "Ссылки на соц. сети" */
+/* Эффективные решения для вашего бизнеса */
+.hero__title {
+  position: relative;
+  min-width: clamp(15.625rem, 100%, 43.5rem);
+  /* 250px to 696px */
+  min-height: clamp(5.25rem, 1vw, 7.5rem);
+  margin-bottom: var(--uni-margin);
+  font-size: clamp(1.625rem, max(3.38vw, 1.625rem), 2.75rem);
+  /* 26px, 44px */
+  line-height: clamp(2.625rem, max(5.47vw, 2.625rem), 3.75rem);
+  /* 42px, 60px */
+  font-weight: 900;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  word-wrap: break-word;
+  text-overflow: clip;
+}
+
+/* START Hero-Button */
+/* Заказать услугу h30px */
+/* .hero__btn {} */
+/* END Hero-Button */
 /* Overlay */
 .backdrop {
   position: fixed;
@@ -859,11 +877,22 @@ body > .skip-link:focus {
 .form-input:focus,
 .form-comment:focus {
   border-color: var(--color-accent);
-  outline: none;
 }
 
 .form-input::placeholder {
-  color: var(--color-black);
+  margin-bottom: 0.25rem;
+  /* 4px */
+  font-size: 0.75rem;
+  /* 12px */
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--color-text-secondary);
+  opacity: 0;
+  transition: opacity var(--time) var(--cubic);
+}
+
+.form-input:focus::placeholder {
+  opacity: 1;
 }
 
 .user-info .svg-wrapper,
@@ -954,7 +983,7 @@ body > .skip-link:focus {
 }
 
 .form-input-checkbox:focus:not(:checked) + .form-label > .custom-checkbox {
-  box-shadow: 0 0 3px 2px rgba(33, 150, 243, 0.5);
+  box-shadow: 0 0 4px 4px rgba(33, 150, 243, 0.5);
 }
 
 .form-input-checkbox:focus:checked + .form-label > .custom-checkbox {
@@ -1037,7 +1066,12 @@ body > .skip-link:focus {
 /* ------------------------------------------------------ */
 /* || ------- END "ПОРТФОЛИО - ФИЛЬТРЫ-КНОПКИ" ---------- */
 /* ------------------------------------------------------ */
-/* LAYOUT */
+/* ------------------------------------------------------ */
+/* || ---------------- END "COMPONENTS" ----------------- */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* || ----------------- START "LAYOUT" ------------------ */
+/* ------------------------------------------------------ */
 /* ------------------------------------------------------ */
 /* || --------------- START "ШАПКА САЙТА" --------------- */
 /* ------------------------------------------------------ */
@@ -1056,12 +1090,11 @@ body > .skip-link:focus {
 /* ------------------------------------------------------ */
 /* || ------------------ START "ГЕРОЙ" ------------------ */
 /* ------------------------------------------------------ */
-.main__hero {
+.hero {
   max-width: 100rem;
   padding-top: clamp(7.375rem, max(12.5vw, 118px), 12.5rem);
   /* 118px to 200px */
   padding-bottom: clamp(7.375rem, max(12.5vw, 118px), 12.5rem);
-  margin: 0 auto;
   text-align: center;
   background-color: var(--color-bg-hero);
   /* 2F303A */
@@ -1072,40 +1105,10 @@ body > .skip-link:focus {
   background-size: cover;
 }
 
-/* Эффективные решения для вашего бизнеса */
-.hero__title {
-  position: relative;
-  min-width: clamp(15.625rem, 100%, 43.5rem);
-  /* 250px to 696px */
-  min-height: clamp(5.25rem, 1vw, 7.5rem);
-  margin-bottom: var(--uni-margin);
-  font-size: clamp(1.625rem, max(3.38vw, 1.625rem), 2.75rem);
-  /* 26px, 44px */
-  line-height: clamp(2.625rem, max(5.47vw, 2.625rem), 3.75rem);
-  /* 42px, 60px */
-  font-weight: 900;
-  color: var(--color-white);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  word-wrap: break-word;
-  text-overflow: clip;
+.main__hero {
+  margin: 0 auto;
 }
 
-/* START Hero-Button */
-/* Заказать услугу h30px */
-.hero__btn {
-  min-width: 12.5rem;
-  max-width: 18.75rem;
-  min-height: 3.125rem;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.88;
-  /* 30px = box */
-  letter-spacing: 0.06em;
-  /* from btn--primary - background-color: #2196f3; */
-}
-
-/* END Hero-Button */
 /* ------------------------------------------------------ */
 /* || ------------------- END "ГЕРОЙ" ------------------- */
 /* ------------------------------------------------------ */
@@ -1752,10 +1755,14 @@ main > .activities {
 .subscribe-btn {
   display: inline-flex;
   align-items: center;
-  padding-top: 10px;
-  padding-right: 28px;
-  padding-bottom: 10px;
-  padding-left: 29px;
+  padding-top: 0.5625rem;
+  /* 9px */
+  padding-right: 1.6875rem;
+  /* 27px */
+  padding-bottom: 0.5625rem;
+  /* 9px */
+  padding-left: 1.75rem;
+  /* 28px */
   /* margin-top: var(--uni-margin-med); for mobile */
   font-size: 1rem;
   font-weight: 700;
@@ -1765,7 +1772,7 @@ main > .activities {
 }
 
 .subscribe-btn .send-icon {
-  margin-left: 10px;
+  margin-left: 0.625rem;
   fill: currentColor;
   /* anchor */
   animation: send-icon-return var(--time) var(--cubic) 1 backwards;
@@ -1777,24 +1784,6 @@ main > .activities {
 .subscribe-btn:hover > .send-icon,
 .subscribe-btn:focus > .send-icon {
   animation: send-icon-fly var(--time) var(--cubic) 1 forwards;
-}
-
-@keyframes send-icon-fly {
-  0% {
-    transform: rotate(0deg) scale(1);
-  }
-  100% {
-    transform: rotate(-360deg) scale(0.5);
-  }
-}
-
-@keyframes send-icon-return {
-  0% {
-    transform: rotate(360deg) scale(0.5);
-  }
-  100% {
-    transform: rotate(0deg) scale(1);
-  }
 }
 
 /* END Форма подписки на рассылку */
@@ -1845,4 +1834,8 @@ main > .activities {
 .btn--primary:focus, .btn--primary:hover, .current-btn:focus, .current-btn:hover {
   background-color: var(--color-bg-hero-btn);
 }
+
+/* ------------------------------------------------------ */
+/* || ------------------ END "LAYOUT" ------------------- */
+/* ------------------------------------------------------ */
 /*# sourceMappingURL=main.css.map */

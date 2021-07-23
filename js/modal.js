@@ -8,6 +8,7 @@
       .querySelectorAll(
         "button, a[href], input, select, textarea, [tabindex]:not([tabindex='-1'])",
       ),
+    modalInputs: document.querySelectorAll(".form-input"),
     modalTitle: document.querySelector("[data-modal-title]"),
     htmlAndBody: document.querySelectorAll("[data-no-scroll]"),
   };
@@ -18,43 +19,38 @@
       refs.htmlAndBody[1].classList.toggle("no-scroll");
   }
 
+  for (let i = 0; i < refs.modalInputs.length; i++) {
+    refs.modalInputs[i].addEventListener("focusin", e => {
+      e.currentTarget.placeholder = e.currentTarget.dataset.placeholder;
+    });
+
+    refs.modalInputs[i].addEventListener("focusout", e => {
+      e.currentTarget.placeholder = ` `;
+    });
+  }
+
   var isFocused = 0;
+  function focusLog(targetElem = refs.openModalBtn) {
+    /* Чарівництво */
+    setTimeout(() => {
+      targetElem.focus();
+      isFocused = document.activeElement === targetElem;
+      console.log(`${targetElem.className} isFocused: ${isFocused}`);
+    }, 250);
+  }
 
   refs.openModalBtn.addEventListener("click", function () {
-    refs.modal.classList.contains("is-hidden") &&
-      (toggleModal(),
-      /* Чарівництво */
-      setTimeout(() => {
-        refs.modal.focus();
-        isFocused = document.activeElement === refs.modal;
-        console.log(`modal isFocused: ${isFocused}`);
-      }, 250));
+    refs.modal.classList.contains("is-hidden") && (toggleModal(), focusLog(refs.modal));
   }),
     refs.closeModalBtn.addEventListener("click", event => {
-      toggleModal(),
-        setTimeout(() => {
-          refs.openModalBtn.focus();
-          isFocused = document.activeElement === refs.openModalBtn;
-          console.log(`openModalBtn isFocused: ${isFocused}`);
-        }, 250);
+      toggleModal(), focusLog();
     }),
     refs.modal.addEventListener("keyup", event => {
       (event.which === 27 || event.key === "Escape") &&
         !refs.modal.classList.contains("is-hidden") &&
-        (toggleModal(),
-        setTimeout(() => {
-          refs.openModalBtn.focus();
-          isFocused = document.activeElement === refs.openModalBtn;
-          console.log(`openModalBtn isFocused: ${isFocused}`);
-        }, 250));
+        (toggleModal(), focusLog());
     }),
-    refs.modal.addEventListener("click", event => {
-      event.target.matches("[data-modal]") &&
-        (toggleModal(),
-        setTimeout(() => {
-          refs.openModalBtn.focus();
-          isFocused = document.activeElement === refs.openModalBtn;
-          console.log(`openModalBtn isFocused: ${isFocused}`);
-        }, 250));
+    refs.modal.addEventListener("mousedown", event => {
+      event.target.matches("[data-modal]") && (toggleModal(), focusLog());
     });
 })();
