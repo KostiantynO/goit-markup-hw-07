@@ -1823,7 +1823,7 @@ main > .activities {
 
 /* Hide standard overlay over active nav-link */
 .nav__link::before, .nav__link:focus > .nav__link-overlay,
-.nav__link:hover > .nav__link-overlay {
+.nav__link:hover > .nav__link-overlay, .nav__link-overlay--current {
   transform: scaleX(0);
 }
 

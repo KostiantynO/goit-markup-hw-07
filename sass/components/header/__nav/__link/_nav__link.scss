@@ -22,7 +22,10 @@
   /* || ------ END SPECIAL LINK OVERLAY ------  */
 
   &:focus::before,
-  &:hover::before,
+  &:hover::before {
+    @extend %scaleX-full-width;
+  }
+
   &--current::before {
     @extend %scaleX-full-width;
   }
@@ -53,5 +56,9 @@
 
 .nav__link:focus > .nav__link-overlay,
 .nav__link:hover > .nav__link-overlay {
+  @extend %scaleX-zero;
+}
+
+.nav__link-overlay--current {
   @extend %scaleX-zero;
 }
