@@ -132,7 +132,7 @@ body > .skip-link:focus
 .logo__web-studio
 .logo:hover .logo__web-studio,
 .logo:focus .logo__web-studio
-.logo__web-studio.white
+.logo__last-part--inverse
 .logo__web-studio.black
 .white
 .black
@@ -147,8 +147,8 @@ body > .skip-link:focus
 .page-header__nav .btn--secondary:focus,
 .page-header__nav .btn--secondary:active
 .page-header__nav .btn--secondary:hover
-.header-contacts-list
-.header-contacts-list .contact-item + .contact-item
+.page-header__contacts-list
+.page-header__contacts-list .contact-item + .contact-item
 .header-contact
 .header-contact-icon
 .header-contact:hover > .header-contact-icon,

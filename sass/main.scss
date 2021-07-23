@@ -13,13 +13,13 @@
 
 /* COMPONENTS */
 // Studio and Portfolio
-@import "./components/animations";
-@import "./components/skip-link";
-@import "./components/header/__nav/page-header__nav";
+@import "./components/shared/animations";
+@import "./components/ally/skip-link";
+@import "./components/page-header/__nav/page-header__nav";
 @import "./components/shared/logo";
-@import "./components/header/__nav/__link/nav__link";
+@import "./components/page-header/__nav/__link/nav__link";
 @import "./components/shared/btn";
-@import "./components/header/header-contacts-list";
+@import "./components/page-header/page-header__contacts-list";
 @import "./components/shared/social-list";
 
 // Studio - Modal

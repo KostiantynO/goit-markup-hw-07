@@ -31,18 +31,18 @@
   }
 }
 
-.logo__web-studio.white {
+.logo__first-part {
   width: 3.66rem; /* 58.56px; */
-}
-.logo__web-studio.black {
-  width: 5.22rem; /* 83.52px */
+  color: var(--color-accent); /* "Studio" в Лого */
 }
 
-.white {
+.logo__last-part {
+  width: 5.22rem; /* 83.52px */
+  color: var(--color-black);
+}
+
+.logo__last-part--inverse {
   color: var(--color-white);
 }
 
-.black {
-  color: var(--color-black); /* "Studio" в Лого */
-}
 /* END "Лого-ссылка WebStudio" */

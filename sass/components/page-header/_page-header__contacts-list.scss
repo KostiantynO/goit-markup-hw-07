@@ -1,13 +1,13 @@
 /* START "Шапка сайта - Контакты" */
 
-.header-contacts-list {
+.page-header__contacts-list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   margin-left: auto;
 }
 
-.header-contacts-list .contact-item + .contact-item {
+.page-header__contacts-list .contact-item + .contact-item {
   margin-left: var(--uni-margin-big);
 }
 
