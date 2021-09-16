@@ -877,6 +877,7 @@ body > .skip-link:focus {
 .form-input:focus,
 .form-comment:focus {
   border-color: var(--color-accent);
+  outline: none;
 }
 
 .form-input::placeholder {
